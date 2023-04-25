@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 function start(voprosiotveti, navH1) {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello ${userName}`);
+  console.log(`Hello, ${userName}!`);
   console.log(navH1);
 
   for (let i = 0; i < 3; i += 1) {
