@@ -1,25 +1,18 @@
-import { start } from '../src/index.js';
+import start from './index.js';
+import getRandomNumber from './random.js';
 
-function isChetnoe(num){
-    if(num % 2 === 0){
-        return 'yes';
-    }else{
-        return 'no';
-    }
+function isChetnoe(num) {
+  if (num % 2 === 0) {
+    return 'yes';
+  }
+  return 'no';
 }
 
-function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min) + min)
-}
-
+const navH1 = 'Answer "yes" if the number is even, otherwise answer "no".';
 const test = () => {
-    const navH1 = "Answer \"yes\" if the number is even, otherwise answer \"no\"."
-    const voprosiotveti = {}
-    for (let i = 0; i < 3; i++) {
-        let rand = getRandomNumber(1, 100)      
-        let otvet = isChetnoe(rand)      
-        voprosiotveti[i] = {rand, otvet}       
-    }   
-start(voprosiotveti, navH1)
-}
-export { test }
+  const rand = getRandomNumber(1, 100);
+  const otvet = isChetnoe(rand);
+
+  return [rand, otvet];
+};
+export default () => start(test, navH1);
