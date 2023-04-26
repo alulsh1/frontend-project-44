@@ -22,7 +22,7 @@ function progress() {
   const otvet = porgress[randNum];
   porgress[randNum] = '..';
   const vopros = porgress.join(' ');
-  return [vopros, otvet];
+  return [vopros, String(otvet)];
 }
 
 export default () => start(progress, navH1);

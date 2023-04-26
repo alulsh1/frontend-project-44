@@ -23,7 +23,7 @@ function result() {
   const vopros = `${num1} ${num2}`;
   const otvet = delitel(num1, num2);
 
-  return [vopros, otvet];
+  return [vopros, String(otvet)];
 }
 
 export default () => start(result, navH1);
