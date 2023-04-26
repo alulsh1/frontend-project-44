@@ -10,7 +10,6 @@ const navH1 = 'What is the result of the expression?';
 const znaks = ['+', '-', '*'];
 function result() {
   const op = getRandomNumber(1, 4);
-  console.log(op);
   const znak = znaks[op - 1];
 
   const num1 = getRandomNumber(0, 100);
@@ -18,7 +17,7 @@ function result() {
 
   const vopros = `${num1} ${znak} ${num2}`;
   const otvet = oper[op](num1, num2);
-  return [vopros, otvet];
+  return [vopros, String(otvet)];
 }
 
 export default () => start(result, navH1);
